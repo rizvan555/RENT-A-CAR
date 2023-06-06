@@ -13,7 +13,7 @@ function Home() {
   return (
     <div className="relative">
       <Header />
-      <main className="">
+      <main className="relative">
         <ul className="flex justify-around text-slate-100 py-4 bg-primary z-10 ">
           <li className="flex items-center gap-2">
             <ImLocation2 />
@@ -28,10 +28,12 @@ function Home() {
             demo@gmail.com
           </li>
         </ul>
-        <div className="z-0 relative">
-          <Image src={bannerBg} alt="bannerBg" className=" " />
+        <div className="z-0 absolute">
+          <Image src={bannerBg} alt="bannerBg" className="" />
         </div>
-        <Carousel />
+        <div className="relative top-48 right-96">
+          <Carousel />
+        </div>
       </main>
     </div>
   );

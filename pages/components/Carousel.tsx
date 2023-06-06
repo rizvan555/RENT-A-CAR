@@ -26,7 +26,7 @@ function Carousel() {
 
   return (
     <Slider {...settings}>
-      <div className=" relative text-white z-30  flex flex-col items-start gap-y-20 w-[50vw]">
+      <div className="flex flex-col items-start text-white z-30  gap-y-20 w-[50vw]">
         <h1 className="flex flex-col text-center font-bold">
           <span className="text-dark text-7xl ">CAR RENT</span>
           <span className="text-red-500 text-7xl">FOR YOU</span>
