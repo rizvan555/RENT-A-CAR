@@ -1,10 +1,16 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import Header from "./components/Header";
-import Home from "./Home";
+import Home from "./home";
+import About from "./about";
+import SearchContainer from "./searchContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function HomePage() {
-  return <Home />;
+  return (
+    <div>
+      <Home />
+      <About />
+      <SearchContainer />
+    </div>
+  );
 }

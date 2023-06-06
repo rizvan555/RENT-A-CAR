@@ -14,19 +14,19 @@ interface PropSetteings {
 }
 function Carousel() {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     arrows: false,
   } as PropSetteings;
 
   return (
     <Slider {...settings}>
-      <div className="flex flex-col items-start text-white z-30  gap-y-20 w-[50vw]">
+      <div className="flex flex-col items-start text-white z-30 gap-y-20 w-[50vw]">
         <h1 className="flex flex-col text-center font-bold">
           <span className="text-dark text-7xl ">CAR RENT</span>
           <span className="text-red-500 text-7xl">FOR YOU</span>
