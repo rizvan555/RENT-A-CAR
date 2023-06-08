@@ -1,16 +1,13 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import clientImg1 from "../resource/images/clientImg1.png";
 import clientImg2 from "../resource/images/clientImg2.png";
 import Slider from "react-slick";
-import {
-  BsFillArrowRightSquareFill,
-  BsFillArrowLeftSquareFill,
-} from "react-icons/bs";
+import { BsArrowRightSquare, BsArrowLeftSquare } from "react-icons/bs";
 
 function Customers() {
+  const [slide, setSlide] = useState(true);
   const settings = {
-    dots: true,
     arrow: true,
     infinite: true,
     speed: 500,
@@ -33,58 +30,91 @@ function Customers() {
       text: "It is a long established fact that a reader will be distracted by the readable content of a page",
     },
   ];
+  const customers1 = [
+    {
+      id: 1,
+      photo: clientImg2,
+      name: "Cheng",
+      text: "It is a long established fact that a reader will be distracted by the readable content of a page",
+    },
+    {
+      id: 2,
+      photo: clientImg1,
+      name: "Jang",
+      text: "It is a long established fact that a reader will be distracted by the readable content of a page",
+    },
+  ];
+
   return (
-    <div className="py-10">
+    <div className="relative p-10">
       <h1 className="text-5xl font-bold text-center py-10">
         WHAT SAYS CUSTOMERS
       </h1>
-      <Slider {...settings} className="">
-        <div className="">
-          <div className="flex justify-center items-center gap-10 px-10 py-24">
-            {customers.map((customer) => {
-              return (
-                <div
-                  className="customer relative flex flex-col justify-center items-center border px-4 py-8 w-[25vw] text-center gap-8 hover:scale-105 transition-all"
-                  key={customer.id}
-                >
-                  <Image
-                    src={customer.photo}
-                    alt="customer-photo"
-                    width={170}
-                    height={170}
-                    className="absolute -top-12"
-                  />
-                  <h3 className="text-2xl font-bold mt-28">{customer.name}</h3>
-                  <p className="text-xl font-light">{customer.text}</p>
-                </div>
-              );
-            })}
+      <Slider {...settings}>
+        {slide ? (
+          <div className="">
+            <div className="flex justify-center items-center gap-10 px-10 py-24">
+              {customers.map((customer) => {
+                return (
+                  <div
+                    className="customer relative flex flex-col justify-center items-center border px-4 py-8 w-[25vw] text-center gap-8 hover:scale-105 transition-all"
+                    key={customer.id}
+                  >
+                    <Image
+                      src={customer.photo}
+                      alt="customer-photo"
+                      width={170}
+                      height={170}
+                      className="absolute -top-12"
+                    />
+                    <h3 className="text-2xl font-bold mt-28">
+                      {customer.name}
+                    </h3>
+                    <p className="text-xl font-light">HALLO{customer.text}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-        <div className="">
-          <div className="flex justify-center items-center gap-10 px-10 py-20">
-            {customers.map((customer) => {
-              return (
-                <div
-                  className="customer relative flex flex-col justify-center items-center border px-4 py-8 w-[25vw] text-center gap-8 hover:scale-105 transition-all"
-                  key={customer.id}
-                >
-                  <Image
-                    src={customer.photo}
-                    alt="customer-photo"
-                    width={170}
-                    height={170}
-                    className="absolute -top-12"
-                  />
-                  <h3 className="text-2xl font-bold mt-28">{customer.name}</h3>
-                  <p className="text-xl font-light">{customer.text}</p>
-                </div>
-              );
-            })}
+        ) : (
+          <div className="">
+            <div className="flex justify-center items-center gap-10 px-10 py-24">
+              {customers1.map((customer) => {
+                return (
+                  <div
+                    className="customer relative flex flex-col justify-center items-center border px-4 py-8 w-[25vw] text-center gap-8 hover:scale-105 transition-all"
+                    key={customer.id}
+                  >
+                    <Image
+                      src={customer.photo}
+                      alt="customer-photo"
+                      width={170}
+                      height={170}
+                      className="absolute -top-12"
+                    />
+                    <h3 className="text-2xl font-bold mt-28">
+                      {customer.name}
+                    </h3>
+                    <p className="text-xl font-light">{customer.text}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </Slider>
-      <div></div>
+      <button
+        className="absolute left-44 bottom-72 cursor-pointer focus:scale-75 transition-all"
+        onClick={() => setSlide(!slide)}
+      >
+        <BsArrowLeftSquare size={50} />
+      </button>
+      <button
+        className="absolute right-48 bottom-72 cursor-pointer focus:scale-75 transition-all"
+        onClick={() => setSlide(!slide)}
+      >
+        <BsArrowRightSquare size={50} />
+      </button>
     </div>
   );
 }
