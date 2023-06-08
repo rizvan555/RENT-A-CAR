@@ -24,7 +24,7 @@ function InfoBar() {
   ];
   return (
     <div className="felx flex-col bg-[#363636] text-slate-100 py-10 px-28 ">
-      <h1 className="text-start text-5xl mb-20">WHY CHOOSE US</h1>
+      <h1 className="text-start text-5xl mb-20 font-bold">WHY CHOOSE US</h1>
       <ul className="flex justify-center items-center gap-12">
         {infos.map((info, index) => {
           return (

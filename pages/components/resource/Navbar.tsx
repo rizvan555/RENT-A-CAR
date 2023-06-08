@@ -15,7 +15,11 @@ function Navbar() {
       <ul className="flex gap-12">
         {navMenu.map((nav, index) => {
           return (
-            <Link href="" key={index} className="text-lg">
+            <Link
+              href=""
+              key={index}
+              className="text-lg text-slate-100 focus:scale-90 focus:text-slate-300 transition-all"
+            >
               {nav}
             </Link>
           );

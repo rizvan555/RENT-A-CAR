@@ -17,15 +17,15 @@ function Header() {
         <Navbar />
       </div>
       <ul className="flex justify-around text-slate-100 py-4 bg-primary ">
-        <li className="flex items-center gap-2">
+        <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
           <ImLocation2 />
           Location
         </li>
-        <li className="flex items-center gap-2">
+        <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
           <FaPhoneAlt />
           (+49)12345678
         </li>
-        <li className="flex items-center gap-2">
+        <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
           <MdEmail />
           demo@gmail.com
         </li>
