@@ -1,8 +1,9 @@
 import { Inter } from "next/font/google";
-import Home from "./home";
-import About from "./about";
-import SearchContainer from "./searchContainer";
 import Catalog from "./components/catalog";
+import InfoBar from "./infoBar";
+import Home from "./Home";
+import About from "./About";
+import SearchContainer from "./SearchContainer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export default function HomePage() {
       <About />
       <SearchContainer />
       <Catalog />
+      <InfoBar />
     </div>
   );
 }
