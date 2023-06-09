@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Navbar from "./Navbar";
+import Navbar from "../resource/Navbar";
 import logo from "../../../resource/images/logo.png";
 import Image from "next/image";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -18,8 +18,10 @@ function Header() {
       </div>
       <ul className="flex justify-around text-slate-100 py-4 bg-primary ">
         <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
-          <ImLocation2 />
-          Location
+          <Link href="/location">
+            <ImLocation2 />
+            Location
+          </Link>
         </li>
         <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
           <FaPhoneAlt />

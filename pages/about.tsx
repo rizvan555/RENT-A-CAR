@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function About() {
   return (
-    <div className="flex gap-12 w-full h-[100vh] px-20 -my-40">
+    <div className="flex gap-12 w-full h-[100vh] px-20 my-10">
       <div className="w-full h-full">
         <Image src={aboutImg} alt="aboutImg" />
       </div>
@@ -14,7 +14,7 @@ function About() {
           ABOUT <span className="text-primary">US</span>
         </h2>
         <p className="text-xl">
-          going to use a passage of Lorem Ipsum, you need to be sure there is
+          Going to use a passage of Lorem Ipsum, you need to be sure there is
           not anything embarrassing hidden in the middle of text. All the Lorem
           Ipsum generators on the Internet tend to repeat predefined going to
           use a passage of Lorem Ipsum, you need to be sure there is not

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./components/resource/Header";
+import Header from "./components/layout/Header";
 import bannerBg from "../resource/images/bannerBg.png";
 import Image from "next/image";
 import Carousel from "./components/resource/Carousel";
@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick-theme.css";
 function Home() {
   return (
     <div className="relative">
-      <Header />
       <main className="">
         <div className="">
           <Image src={bannerBg} alt="bannerBg" className="" />

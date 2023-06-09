@@ -1,7 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import logo from "../resource/images/logo.png";
-import Button from "./components/resource/Button";
+import logo from "../../../resource/images/logo.png";
+import Button from "../resource/Button";
+import { ImLocation2 } from "react-icons/im";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 function Footer() {
   return (
@@ -9,8 +12,8 @@ function Footer() {
       <div className="text-center mb-10">
         <Image src={logo} alt="logo" />
       </div>
-      <div className="flex gap-8 px-6">
-        <div className="flex flex-col gap-3">
+      <div className="flex gap-9 px-6">
+        <div className="flex flex-col gap-3 leading-8">
           <h3 className="text-2xl font-bold mb-1">Subscribe Now</h3>
           <p>There are many variations of passages of Lorem Ipsum available</p>
           <input
@@ -22,21 +25,21 @@ function Footer() {
             SUBSCRIBE
           </Button>
         </div>
-        <div className="flex flex-col gap-3 mb-6">
+        <div className="flex flex-col gap-3 mb-6 leading-8">
           <h3 className="text-2xl font-bold">Information</h3>
           <p>
             There are many variations of passages of Lorem Ipsum available, but
             the majority
           </p>
         </div>
-        <div className="flex flex-col gap-3 mb-6">
+        <div className="flex flex-col gap-3 mb-6 leading-8">
           <h3 className="text-2xl font-bold">Helpful Links</h3>
           <p>
             Helpful LinksThere are many variations of passages of Lorem Ipsum
             available, but the majority
           </p>
         </div>
-        <div className="flex flex-col gap-3 mb-6">
+        <div className="flex flex-col gap-3 mb-6 leading-8">
           <h3 className="text-2xl font-bold">Invesments</h3>
           <p>
             Helpful LinksThere are many variations of passages of Lorem Ipsum
@@ -45,10 +48,20 @@ function Footer() {
         </div>
         <div className="flex flex-col gap-3 mb-6">
           <h3 className="text-2xl font-bold">Contact Us</h3>
-          <p>
-            Helpful LinksThere are many variations of passages of Lorem Ipsum
-            available, but the majority
-          </p>
+          <ul className="flex flex-col justify-around text-slate-100 gap-2 mb-6 ">
+            <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
+              <ImLocation2 />
+              Location
+            </li>
+            <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
+              <FaPhoneAlt />
+              (+49)12345678
+            </li>
+            <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
+              <MdEmail />
+              demo@gmail.com
+            </li>
+          </ul>
         </div>
       </div>
     </div>

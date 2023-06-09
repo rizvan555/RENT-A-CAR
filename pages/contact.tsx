@@ -4,7 +4,7 @@ import Button from "./components/resource/Button";
 function Contact() {
   return (
     <div className="">
-      <h1 className="text-center text-5xl font-bold my-20">GET IN TOUCH</h1>
+      <h1 className="text-center text-5xl font-bold my-10">GET IN TOUCH</h1>
       <div className="bg-primary pt-48 pb-10 rounded-tr-[720px] rounded-tl-[720px]">
         <form
           action=""

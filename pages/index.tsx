@@ -7,7 +7,7 @@ import Home from "./home";
 import About from "./about";
 import SearchContainer from "./searchContainer";
 import Contact from "./contact";
-import Footer from "./footer";
+import Footer from "./components/layout/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +21,6 @@ export default function HomePage() {
       <InfoBar />
       <Customers />
       <Contact />
-      <Footer />
     </div>
   );
 }
