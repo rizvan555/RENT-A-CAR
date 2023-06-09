@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "./resource/Button";
-import img1 from "../../resource/images/img1.png";
-import img2 from "../../resource/images/img2.png";
-import img3 from "../../resource/images/img3.png";
+import Button from "./components/resource/Button";
+import img1 from "../resource/images/img1.png";
+import img2 from "../resource/images/img2.png";
+import img3 from "../resource/images/img3.png";
 import Image from "next/image";
 
 function Catalog() {

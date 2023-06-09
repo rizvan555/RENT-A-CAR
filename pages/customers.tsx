@@ -104,13 +104,13 @@ function Customers() {
         )}
       </Slider>
       <button
-        className="absolute left-44 bottom-72 cursor-pointer focus:scale-75 transition-all"
+        className="absolute left-44 bottom-72 cursor-pointer active:scale-90 transition-all"
         onClick={() => setSlide(!slide)}
       >
         <BsArrowLeftSquare size={50} />
       </button>
       <button
-        className="absolute right-48 bottom-72 cursor-pointer focus:scale-75 transition-all"
+        className="absolute right-48 bottom-72 cursor-pointer active:scale-90 transition-all"
         onClick={() => setSlide(!slide)}
       >
         <BsArrowRightSquare size={50} />
