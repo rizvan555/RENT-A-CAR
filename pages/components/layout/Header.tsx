@@ -20,7 +20,7 @@ function Header() {
         <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all ">
           <Link
             href="/location"
-            className="flex items-center gap-2 md:text-xl text-xs"
+            className="flex items-center gap-2 md:text-xl text-[10px]"
           >
             <ImLocation2 />
             Location
