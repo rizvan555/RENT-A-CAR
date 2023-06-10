@@ -10,8 +10,8 @@ import { MdEmail } from "react-icons/md";
 function Header() {
   return (
     <div>
-      <div className="md:flex flex flex-col items-center md:justify-between justify-center py-4 md:px-16 bg-dark text-slate-100">
-        <Link href="/" className="text-3xl fond-bold md:mb-0 mb-8">
+      <div className="md:flex grid grid-cols-1 items-center md:justify-between py-4 md:px-16 px-4 bg-dark text-slate-100">
+        <Link href="/" className="text-3xl fond-bold md:mb-0 mb-6">
           <Image src={logo} alt="Logo" />
         </Link>
         <Navbar />

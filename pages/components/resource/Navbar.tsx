@@ -12,12 +12,12 @@ function Navbar() {
   ]);
   return (
     <nav className="">
-      <ul className="flex gap-12">
+      <ul className="flex md:gap-12 gap-10">
         {navMenu.map((nav) => {
           return (
             <li key={nav.id}>
               <Link href={nav.path} passHref legacyBehavior>
-                <a className="md:text-lg text-[10px] text-slate-100 font-bold focus:scale-90 focus:text-slate-400 focus:font-normal transition-all">
+                <a className="md:text-lg text-[12px] text-slate-100 font-bold focus:scale-90 focus:text-slate-400 focus:font-normal transition-all">
                   {nav.name}
                 </a>
               </Link>

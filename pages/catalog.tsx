@@ -49,7 +49,7 @@ function Catalog() {
       <h1 className="text-center md:text-5xl text-2xl font-bold my-10">
         OUR BEST OFFERS
       </h1>
-      <ul className="md:grid grid-cols-3 grid grid-cols-1 gap-6">
+      <ul className="md:grid grid-cols-3 flex flex-col gap-6">
         {carCatalog.map((car) => {
           return (
             <li

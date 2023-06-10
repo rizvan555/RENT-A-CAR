@@ -11,6 +11,16 @@ module.exports = {
         dark: "#0f0c06",
         primary: "#f95b2a",
       },
+      container: {
+        screens: {
+          xs: "375px",
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1170px",
+          xxl: "1170px",
+        },
+      },
     },
   },
   plugins: [],

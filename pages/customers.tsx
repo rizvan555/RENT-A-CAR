@@ -47,30 +47,32 @@ function Customers() {
 
   return (
     <div className="relative p-10">
-      <h1 className="text-5xl font-bold text-center py-10">
+      <h1 className="md:text-5xl text-2xl font-bold text-center py-10">
         WHAT SAYS CUSTOMERS
       </h1>
       <Slider {...settings}>
         {slide ? (
           <div className="">
-            <div className="flex justify-center items-center gap-10 px-10 py-24">
+            <div className="md:flex xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24 ">
               {customers.map((customer) => {
                 return (
                   <div
-                    className="customer relative flex flex-col justify-center items-center border px-4 py-8 w-[25vw] text-center gap-8 hover:scale-105 transition-all"
+                    className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
                     key={customer.id}
                   >
-                    <Image
-                      src={customer.photo}
-                      alt="customer-photo"
-                      width={170}
-                      height={170}
-                      className="absolute -top-12"
-                    />
-                    <h3 className="text-2xl font-bold mt-28">
+                    <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
+                      <Image
+                        src={customer.photo}
+                        alt="customer-photo"
+                        className="absolute md:-top-12 -top-10 right-24"
+                      />
+                    </div>
+                    <h3 className="md:text-2xl text-xl font-bold md:mt-0 -mt-2">
                       {customer.name}
                     </h3>
-                    <p className="text-xl font-light">{customer.text}</p>
+                    <p className="md:text-xl text-[12px] font-light">
+                      {customer.text}
+                    </p>
                   </div>
                 );
               })}
@@ -78,24 +80,26 @@ function Customers() {
           </div>
         ) : (
           <div className="">
-            <div className="flex justify-center items-center gap-10 px-10 py-24">
+            <div className="md:flex xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24">
               {customers1.map((customer) => {
                 return (
                   <div
-                    className="customer relative flex flex-col justify-center items-center border px-4 py-8 w-[25vw] text-center gap-8 hover:scale-105 transition-all"
+                    className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
                     key={customer.id}
                   >
-                    <Image
-                      src={customer.photo}
-                      alt="customer-photo"
-                      width={170}
-                      height={170}
-                      className="absolute -top-12"
-                    />
-                    <h3 className="text-2xl font-bold mt-28">
+                    <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
+                      <Image
+                        src={customer.photo}
+                        alt="customer-photo"
+                        className="absolute md:-top-12 -top-10 right-24"
+                      />
+                    </div>
+                    <h3 className="md:text-2xl text-xl font-bold md:mt-0 -mt-2">
                       {customer.name}
                     </h3>
-                    <p className="text-xl font-light">{customer.text}</p>
+                    <p className="md:text-xl text-[12px] font-light">
+                      {customer.text}
+                    </p>
                   </div>
                 );
               })}
@@ -104,13 +108,13 @@ function Customers() {
         )}
       </Slider>
       <button
-        className="absolute left-44 bottom-72 cursor-pointer active:scale-90 transition-all"
+        className="md:visible invisible absolute left-44 bottom-72 cursor-pointer active:scale-90 transition-all"
         onClick={() => setSlide(!slide)}
       >
         <BsArrowLeftSquare size={50} />
       </button>
       <button
-        className="absolute right-48 bottom-72 cursor-pointer active:scale-90 transition-all"
+        className="md:visible invisible absolute right-48 bottom-72 cursor-pointer active:scale-90 transition-all"
         onClick={() => setSlide(!slide)}
       >
         <BsArrowRightSquare size={50} />

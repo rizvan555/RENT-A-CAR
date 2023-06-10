@@ -12,7 +12,7 @@ function Footer() {
       <div className="text-center mb-10">
         <Image src={logo} alt="logo" />
       </div>
-      <div className="flex gap-9 px-6">
+      <div className="md:flex grid grid-cols-1 md:gap-9 gap-16 px-6">
         <div className="flex flex-col gap-3 leading-8">
           <h3 className="text-2xl font-bold mb-1">Subscribe Now</h3>
           <p>There are many variations of passages of Lorem Ipsum available</p>
@@ -21,7 +21,7 @@ function Footer() {
             placeholder="Enter Your Email"
             className="bg-transparent border-b-2"
           />
-          <Button className="bg-primary border-0 rounded py-2 px-2 text-base">
+          <Button className="bg-primary border-0 rounded py-2 px-2 text-base md:w-[14vw] w-[30vw] tracking-wider">
             SUBSCRIBE
           </Button>
         </div>

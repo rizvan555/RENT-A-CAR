@@ -8,12 +8,16 @@ import "slick-carousel/slick/slick-theme.css";
 
 function Home() {
   return (
-    <div className="relative">
+    <div className="relative ">
       <main className="">
         <div className="">
-          <Image src={bannerBg} alt="bannerBg" className=" md:visible hidden" />
+          <Image
+            src={bannerBg}
+            alt="bannerBg"
+            className="lg:visible md:visible invisible "
+          />
         </div>
-        <div className="relative md:bottom-[70vh] bottom-0 md:right-[26vw] right-0md:top-0 top-20">
+        <div className="relative md:bottom-[70vh] bottom-56 md:right-[26vw] right-0 ">
           <Carousel />
         </div>
       </main>

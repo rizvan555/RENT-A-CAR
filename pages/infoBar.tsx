@@ -23,15 +23,20 @@ function InfoBar() {
     },
   ];
   return (
-    <div className="felx flex-col bg-[#363636] text-slate-100 py-10 px-28 ">
-      <h1 className="text-start text-5xl mb-20 font-bold">WHY CHOOSE US</h1>
-      <ul className="flex justify-center items-center gap-12">
+    <div className="felx flex-col bg-[#363636] text-slate-100 py-10 md:px-28 px-10 ">
+      <h1 className="md:text-5xl text-2xl md:text-start text-center mb-20 font-bold">
+        WHY CHOOSE US
+      </h1>
+      <ul className="md:flex grid grid-cols-1 justify-center items-center gap-12">
         {infos.map((info, index) => {
           return (
-            <li className="flex flex-col gap-4 w-[25vw]" key={index}>
+            <li
+              className="flex flex-col gap-4 md:w-[25vw] w-[70vw]"
+              key={index}
+            >
               <Image src={info.logo} alt="logos" width={50} height={50} />
-              <h3 className="text-2xl font-bold">{info.title}</h3>
-              <p>{info.text}</p>
+              <h3 className="md:text-2xl text-xl font-bold">{info.title}</h3>
+              <p className="md:text-xs text-[14px]">{info.text}</p>
             </li>
           );
         })}
