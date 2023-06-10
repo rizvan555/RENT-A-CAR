@@ -11,9 +11,9 @@ function Home() {
     <div className="relative">
       <main className="">
         <div className="">
-          <Image src={bannerBg} alt="bannerBg" className="" />
+          <Image src={bannerBg} alt="bannerBg" className=" md:visible hidden" />
         </div>
-        <div className="relative bottom-[70vh] right-[26vw]">
+        <div className="relative md:bottom-[70vh] bottom-0 md:right-[26vw] right-0md:top-0 top-20">
           <Carousel />
         </div>
       </main>

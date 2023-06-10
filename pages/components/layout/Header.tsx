@@ -10,26 +10,40 @@ import { MdEmail } from "react-icons/md";
 function Header() {
   return (
     <div>
-      <div className="flex items-center justify-between py-4 px-16 bg-dark text-slate-100">
-        <Link href="/" className="text-3xl fond-bold">
+      <div className="md:flex flex flex-col items-center md:justify-between justify-center py-4 md:px-16 bg-dark text-slate-100">
+        <Link href="/" className="text-3xl fond-bold md:mb-0 mb-8">
           <Image src={logo} alt="Logo" />
         </Link>
         <Navbar />
       </div>
       <ul className="flex justify-around text-slate-100 py-4 bg-primary ">
-        <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
-          <Link href="/location">
+        <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all ">
+          <Link
+            href="/location"
+            className="flex items-center gap-2 md:text-xl text-xs"
+          >
             <ImLocation2 />
             Location
           </Link>
         </li>
         <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
-          <FaPhoneAlt />
-          (+49)12345678
+          <Link
+            href="/location"
+            className="flex items-center gap-2 md:text-xl text-xs"
+          >
+            <FaPhoneAlt />
+            (+49)12345678
+          </Link>
         </li>
+
         <li className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-all">
-          <MdEmail />
-          demo@gmail.com
+          <Link
+            href="/location"
+            className="flex items-center gap-2 md:text-xl text-xs"
+          >
+            <MdEmail />
+            demo@gmail.com
+          </Link>
         </li>
       </ul>
     </div>

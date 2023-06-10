@@ -28,10 +28,10 @@ function Carousel() {
     <Slider {...settings}>
       <div className="flex flex-col items-start text-white z-30 gap-y-20 w-[50vw]">
         <h1 className="flex flex-col text-center font-bold">
-          <span className="text-dark text-7xl ">CAR RENT</span>
-          <span className="text-red-500 text-7xl">FOR YOU</span>
+          <span className="text-dark md:text-7xl text-2xl ">CAR RENT</span>
+          <span className="text-red-500 md:text-7xl text-2xl">FOR YOU</span>
         </h1>
-        <p className="text-xl w-[35vw] mx-auto mt-6 text-slate-600">
+        <p className="md:text-xl text-xs md:w-[35vw] w-[70vw] text-center mx-auto mt-6 text-slate-600">
           There are many variations of passages of Lorem Ipsum available, but
           the majority
         </p>
@@ -41,12 +41,12 @@ function Carousel() {
         </div>
       </div>
 
-      <div className=" relative text-white z-30  flex flex-col items-start gap-y-20 w-[50vw]">
+      <div className="flex flex-col items-start text-white z-30 gap-y-20 w-[50vw]">
         <h1 className="flex flex-col text-center font-bold">
-          <span className="text-dark text-7xl ">CAR RENT</span>
-          <span className="text-red-500 text-7xl">FOR YOU</span>
+          <span className="text-dark md:text-7xl text-2xl ">CAR RENT</span>
+          <span className="text-red-500 md:text-7xl text-2xl">FOR YOU</span>
         </h1>
-        <p className="text-xl w-[35vw] mx-auto mt-6 text-slate-600">
+        <p className="md:text-xl text-xs md:w-[35vw] w-[70vw] text-center mx-auto mt-6 text-slate-600">
           There are many variations of passages of Lorem Ipsum available, but
           the majority
         </p>

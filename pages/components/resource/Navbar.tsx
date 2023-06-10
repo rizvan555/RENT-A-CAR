@@ -17,7 +17,7 @@ function Navbar() {
           return (
             <li key={nav.id}>
               <Link href={nav.path} passHref legacyBehavior>
-                <a className="text-lg text-slate-100 font-bold focus:scale-90 focus:text-slate-400 focus:font-normal transition-all">
+                <a className="md:text-lg text-[10px] text-slate-100 font-bold focus:scale-90 focus:text-slate-400 focus:font-normal transition-all">
                   {nav.name}
                 </a>
               </Link>
