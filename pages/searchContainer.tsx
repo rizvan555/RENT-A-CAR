@@ -10,7 +10,7 @@ function SearchContainer() {
           Using Content here, content here, making it look like readable
         </p>
       </div>
-      <div className="md:flex flex-col md:text-start text-center gap-6 mt-10">
+      <div className="md:flex flex-col justify-center items-center md:text-start text-center gap-6 mt-10">
         <form action="" className="md:flex grid grid-cols-1 gap-6">
           <select className="flex gap-4 w-72 rounded md:text-2xl text-[12px] px-4 py-2">
             <option value="AnyBrands">Any Brands</option>
