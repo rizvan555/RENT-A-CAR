@@ -23,5 +23,20 @@ module.exports = {
       },
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              outputPath: "images", // Set the output directory for the images
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [],
 };

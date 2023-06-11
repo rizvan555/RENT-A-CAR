@@ -35,12 +35,11 @@ function Contact() {
           <div className="">
             <textarea
               name="Message"
+              placeholder="Message"
               id=""
               className="border px-4 py-3 md:w-[50vw] w-[80vw] rounded"
               rows={4}
-            >
-              Message
-            </textarea>
+            />
           </div>
         </form>
         <div className="text-center mt-10 ">

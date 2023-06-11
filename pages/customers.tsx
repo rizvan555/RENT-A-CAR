@@ -67,7 +67,7 @@ function Customers() {
                         className="absolute md:-top-12 -top-10 right-24"
                       />
                     </div>
-                    <h3 className="md:text-2xl text-xl font-bold md:mt-0 -mt-2">
+                    <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
                       {customer.name}
                     </h3>
                     <p className="md:text-xl text-[12px] font-light">
@@ -94,7 +94,7 @@ function Customers() {
                         className="absolute md:-top-12 -top-10 right-24"
                       />
                     </div>
-                    <h3 className="md:text-2xl text-xl font-bold md:mt-0 -mt-2">
+                    <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
                       {customer.name}
                     </h3>
                     <p className="md:text-xl text-[12px] font-light">

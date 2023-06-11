@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import { Cars } from "./seed";
+import { Cars } from "./seed.ts";
 
 mongoose.connect("mongodb://localhost:27017/cars");
 
@@ -12,14 +12,14 @@ app.use(express.json());
 app.get("/cars/car", async (req, res) => {
   try {
     const cars = await Cars.find();
-    res.status(200).json(cars);
+    res.send(cars);
   } catch (error) {
     res.status(500).json({ message: "You have an error" });
   }
 });
 
 app.post("/cars/car", async (req, res) => {
-  const newCar = req.body;
+  const newCar = await Cars.create(req.body);
   res.status(200).json(newCar);
 });
 
