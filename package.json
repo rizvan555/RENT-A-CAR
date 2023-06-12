@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
-    "@types/node": "^20.2.5",
+    "@types/node": "^19.2.5",
     "@types/react-slick": "^0.23.10"
   }
 }
