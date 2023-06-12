@@ -8,8 +8,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 function HomePage() {
   return (
-    <div className="relative ">
-      <main className="">
+    <div className="relative">
+      <main className="md:mb-[-20vh]">
         <div className="">
           <Image
             src={bannerBg}

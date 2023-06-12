@@ -47,8 +47,8 @@ function Catalog() {
                 <Image
                   src={catalog.car.img}
                   alt="car-image"
-                  width={400}
-                  height={400}
+                  width={350}
+                  height={350}
                 />
               </div>
               <h5 className="md:text-3xl text-xl font-bold">
@@ -57,8 +57,8 @@ function Catalog() {
               <p className="md:text-xl text-[10px] text-primary font-bold ">
                 {catalog.car.price}
               </p>
-              <div className="bg-primary text-slate-100 mt-5">
-                <Button>Book Now</Button>
+              <div className=" text-slate-100 mt-5">
+                <Button className="bg-primary">Book Now</Button>
               </div>
             </li>
           );
