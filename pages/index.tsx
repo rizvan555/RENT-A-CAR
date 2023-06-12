@@ -8,7 +8,6 @@ import SearchContainer from "./searchContainer";
 import Contact from "./contact";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export default function HomePage() {
   return (
     <div>
