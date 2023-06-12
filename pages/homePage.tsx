@@ -6,7 +6,7 @@ import Carousel from "./components/resource/Carousel";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function Home() {
+function HomePage() {
   return (
     <div className="relative ">
       <main className="">
@@ -25,4 +25,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
