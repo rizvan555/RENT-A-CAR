@@ -5,8 +5,8 @@ import Image from "next/image";
 
 function About() {
   return (
-    <div className="md:flex grid grid-cols-1 items-center justify-center gap-12 md:w-full w-[80vw]  md:px-20 px-10 md:mb-20 -mb-20 mx-auto">
-      <div className="md:w-full w-[60vw] md:h-full h-[5vh] mx-auto">
+    <div className="md:flex grid grid-cols-1 items-center justify-center md:gap-12 gap-56 md:w-full w-[80vw]  md:px-20 px-10 md:mb-20 mb-2 md:mt-10 mx-auto">
+      <div className="md:w-full w-[60vw] md:h-full h-[4vh] mx-auto  ">
         <Image src={aboutImg} alt="aboutImg" />
       </div>
       <div className=" flex flex-col md:w-[70vw] w-[70vw] md:gap-10 gap-4 md:text-start text-center md:-mt-4 md:mb-0 mb-20">
