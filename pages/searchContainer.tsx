@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./components/resource/Button";
 import axios from "axios";
 import { type } from "os";
+import Image from "next/image";
 
 interface Car {
   car: {
@@ -34,7 +35,6 @@ function SearchContainer() {
         );
       });
       console.log(filteredCars);
-
       setCarList(filteredCars);
     } catch (error) {
       console.log(error);
@@ -80,12 +80,12 @@ function SearchContainer() {
             onChange={(e) => setPrice(e.target.value)}
           >
             <option value="Price">Price</option>
-            <option value="$200">$200</option>
-            <option value="$250">$250</option>
-            <option value="$300">$300</option>
-            <option value="$350">$350</option>
-            <option value="$400">$400</option>
-            <option value="$450">$450</option>
+            <option value="Start per day €200">Start per day €200</option>
+            <option value="Start per day €250">Start per day €250</option>
+            <option value="Start per day €300">Start per day €300</option>
+            <option value="Start per day €350">Start per day €350</option>
+            <option value="Start per day €400">Start per day €400</option>
+            <option value="Start per day €450">Start per day €450</option>
           </select>
         </form>
         <button
@@ -95,17 +95,35 @@ function SearchContainer() {
           SEARCH NOW
         </button>
       </div>
-      <div className="mt-20">
-        <ul className="">
-          {carList.map((car) => {
-            return (
-              <li key={car._id} className="border text-white">
-                {car.car.model}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      {carList.length > 0 && (
+        <div className="mt-20">
+          <ul className="">
+            {carList.map((car) => {
+              return (
+                <li
+                  className="border flex flex-col items-center justify-center bg-slate-100 py-6 md:gap-4 gap-2 rounded hover:scale-105 transition-all catalog"
+                  key={car._id}
+                >
+                  <div className="md:w-[400px] w-[200px] ml-20">
+                    <Image
+                      src={car.car.img}
+                      alt="car-image"
+                      width={300}
+                      height={300}
+                    />
+                  </div>
+                  <h5 className="md:text-3xl text-xl font-bold">
+                    {car.car.model}
+                  </h5>
+                  <p className="md:text-xl text-[10px] text-primary font-bold ">
+                    {car.car.price}
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
