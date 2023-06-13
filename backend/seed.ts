@@ -10,7 +10,6 @@ const carSchema = new Schema(
       price: String,
       brand: String,
       type: String,
-      
     }),
   },
   { versionKey: false }
@@ -19,7 +18,7 @@ const carsData = [
   {
     car: {
       img: "/images/img1.png",
-      model: "Mercedes",
+      model: "Mercedes-GL",
       price: "Start per day €200",
       brand: "GL classe",
       type: "SUV",
@@ -28,7 +27,7 @@ const carsData = [
   {
     car: {
       img: "/images/img2.png",
-      model: "Mercedes",
+      model: "Mercedes-S",
       price: "Start per day €250",
       brand: "S classe",
       type: "Sedan",
@@ -37,7 +36,7 @@ const carsData = [
   {
     car: {
       img: "/images/img3.png",
-      model: "Mercedes",
+      model: "Mercedes-ML",
       price: "Start per day €300",
       brand: "ML classe",
       type: "Crossover",
@@ -46,7 +45,7 @@ const carsData = [
   {
     car: {
       img: "/images/img3.png",
-      model: "Mercedes",
+      model: "Mercedes-ML",
       price: "Start per day €350",
       brand: "ML classe",
       type: "Crossover",
@@ -55,7 +54,7 @@ const carsData = [
   {
     car: {
       img: "/images/img2.png",
-      model: "Mercedes",
+      model: "Mercedes-S",
       price: "Start per day €400",
       brand: "S classe",
       type: "Sedan",
@@ -64,7 +63,7 @@ const carsData = [
   {
     car: {
       img: "/images/img1.png",
-      model: "Mercedes",
+      model: "Mercedes-GL",
       price: "Start per day €450",
       brand: "GL classe",
       type: "SUV",

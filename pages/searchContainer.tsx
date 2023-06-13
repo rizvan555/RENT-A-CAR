@@ -23,18 +23,17 @@ function SearchContainer() {
 
   const handleSearch = async () => {
     try {
-      console.log("Brand:", brand);
-      console.log("Type:", type);
-      console.log("Price:", price);
       const response = await axios.get<Car[]>("http://localhost:3001/cars/car");
       const filteredCars = response.data.filter((car: Car) => {
         return (
-          (brand === "AnyBrands" || car.car.brand === brand) &&
-          (type === "AnyType" || car.car.type === type) &&
-          (price === "AnyPrice" || car.car.price === price)
+          brand === "AnyBrands" ||
+          car.car.brand === brand ||
+          type === "AnyType" ||
+          car.car.type === type ||
+          price === "AnyPrice" ||
+          car.car.price === price
         );
       });
-      console.log(filteredCars);
       setCarList(filteredCars);
     } catch (error) {
       console.log(error);
@@ -95,35 +94,33 @@ function SearchContainer() {
           SEARCH NOW
         </button>
       </div>
-      {carList.length > 0 && (
-        <div className="mt-20">
-          <ul className="">
-            {carList.map((car) => {
-              return (
-                <li
-                  className="border flex flex-col items-center justify-center bg-slate-100 py-6 md:gap-4 gap-2 rounded hover:scale-105 transition-all catalog"
-                  key={car._id}
-                >
-                  <div className="md:w-[400px] w-[200px] ml-20">
-                    <Image
-                      src={car.car.img}
-                      alt="car-image"
-                      width={300}
-                      height={300}
-                    />
-                  </div>
-                  <h5 className="md:text-3xl text-xl font-bold">
-                    {car.car.model}
-                  </h5>
-                  <p className="md:text-xl text-[10px] text-primary font-bold ">
-                    {car.car.price}
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
+      <div className="mt-20 w-[90vw]">
+        <ul className="flex gap-6 flex-wrap">
+          {carList.map((car) => {
+            return (
+              <li
+                className="border flex flex-col items-center justify-center bg-slate-100 py-6 md:gap-4 gap-2 rounded hover:scale-105 transition-all catalog"
+                key={car._id}
+              >
+                <div className="md:w-[350px] w-[200px] ml-14">
+                  <Image
+                    src={car.car.img}
+                    alt="car-image"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <h5 className="md:text-3xl text-xl font-bold">
+                  {car.car.model}
+                </h5>
+                <p className="md:text-xl text-[10px] text-primary font-bold ">
+                  {car.car.price}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
