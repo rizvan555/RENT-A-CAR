@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "./components/resource/Button";
 import Image from "next/image";
-// import img1 from "../resource/images/img1.png";
-// import img2 from "../resource/images/img2.png";
-// import img3 from "../resource/images/img3.png";
 
 interface Car {
   car: {

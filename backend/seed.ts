@@ -3,12 +3,15 @@ import { Schema } from "mongoose";
 
 const carSchema = new Schema(
   {
-    car: {
+    car: new Schema({
       _id: Number,
       img: String,
       model: String,
       price: String,
-    },
+      brand: String,
+      type: String,
+      
+    }),
   },
   { versionKey: false }
 );
@@ -17,42 +20,54 @@ const carsData = [
     car: {
       img: "/images/img1.png",
       model: "Mercedes",
-      price: "Start per day $4500",
+      price: "Start per day €200",
+      brand: "GL classe",
+      type: "SUV",
     },
   },
   {
     car: {
       img: "/images/img2.png",
       model: "Mercedes",
-      price: "Start per day $5500",
+      price: "Start per day €250",
+      brand: "S classe",
+      type: "Sedan",
     },
   },
   {
     car: {
       img: "/images/img3.png",
       model: "Mercedes",
-      price: "Start per day $6500",
+      price: "Start per day €300",
+      brand: "ML classe",
+      type: "Crossover",
     },
   },
   {
     car: {
       img: "/images/img3.png",
       model: "Mercedes",
-      price: "Start per day $7500",
+      price: "Start per day €350",
+      brand: "ML classe",
+      type: "Crossover",
     },
   },
   {
     car: {
       img: "/images/img2.png",
       model: "Mercedes",
-      price: "Start per day $8500",
+      price: "Start per day €400",
+      brand: "S classe",
+      type: "Sedan",
     },
   },
   {
     car: {
       img: "/images/img1.png",
       model: "Mercedes",
-      price: "Start per day $9500",
+      price: "Start per day €450",
+      brand: "GL classe",
+      type: "SUV",
     },
   },
 ];
