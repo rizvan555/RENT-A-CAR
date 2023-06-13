@@ -14,6 +14,15 @@ const carSchema = new Schema(
   },
   { versionKey: false }
 );
+
+const customerSchema = new Schema({
+  customer: new Schema({
+    name: String,
+    email: String,
+    text: String,
+  }),
+});
+
 const carsData = [
   {
     car: {
@@ -71,8 +80,47 @@ const carsData = [
   },
 ];
 
+const customersData = [
+  {
+    customer: {
+      name: "Hannery",
+      email: "Hanneri@gmail.com",
+      img: "/images/clientImg1.png",
+      text: "It is a long established fact that a reader will be distracted by the readable content of a page",
+    },
+  },
+  {
+    customer: {
+      name: "Channery",
+      email: "Channeri@gmail.com",
+      img: "/images/clientImg2.png",
+      text: "It is a long established fact that a reader will be distracted by the readable content of a page",
+    },
+  },
+  {
+    customer: {
+      name: "Cheng",
+      email: "Cheng@gmail.com",
+      img: "/images/clientImg2.png",
+      text: "It is a long established fact that a reader will be distracted by the readable content of a page",
+    },
+  },
+  {
+    customer: {
+      name: "Jang",
+      email: "Jang@gmail.com",
+      img: "/images/clientImg1.png",
+      text: "It is a long established fact that a reader will be distracted by the readable content of a page",
+    },
+  },
+];
+
 export const Cars = mongoose.model("Cars", carSchema);
+export const Customers = mongoose.model("Customers", customerSchema);
 
 carsData.map((carData) => {
   return Cars.create(carData);
+});
+customersData.map((customerData) => {
+  return Customers.create(customerData);
 });
