@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Button from "./components/resource/Button";
 import axios from "axios";
-import { type } from "os";
 import Image from "next/image";
 
 interface Car {
