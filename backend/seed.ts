@@ -1,5 +1,4 @@
-import mongoose from "mongoose";
-import { Schema } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 const carSchema = new Schema(
   {
@@ -16,11 +15,15 @@ const carSchema = new Schema(
 );
 
 const customerSchema = new Schema({
-  customer: new Schema({
-    name: String,
-    email: String,
-    text: String,
-  }),
+  customer: new Schema(
+    {
+      img: String,
+      name: String,
+      email: String,
+      text: String,
+    },
+    { _id: false }
+  ),
 });
 
 const carsData = [
@@ -83,40 +86,40 @@ const carsData = [
 const customersData = [
   {
     customer: {
+      img: "/images/clientImg1.png",
       name: "Hannery",
       email: "Hanneri@gmail.com",
-      img: "/images/clientImg1.png",
       text: "It is a long established fact that a reader will be distracted by the readable content of a page",
     },
   },
   {
     customer: {
+      img: "/images/clientImg2.png",
       name: "Channery",
       email: "Channeri@gmail.com",
-      img: "/images/clientImg2.png",
       text: "It is a long established fact that a reader will be distracted by the readable content of a page",
     },
   },
   {
     customer: {
+      img: "/images/clientImg2.png",
       name: "Cheng",
       email: "Cheng@gmail.com",
-      img: "/images/clientImg2.png",
       text: "It is a long established fact that a reader will be distracted by the readable content of a page",
     },
   },
   {
     customer: {
+      img: "/images/clientImg1.png",
       name: "Jang",
       email: "Jang@gmail.com",
-      img: "/images/clientImg1.png",
       text: "It is a long established fact that a reader will be distracted by the readable content of a page",
     },
   },
 ];
 
-export const Cars = mongoose.model("Cars", carSchema);
-export const Customers = mongoose.model("Customers", customerSchema);
+export const Cars = model("Cars", carSchema);
+export const Customers = model("Customers", customerSchema);
 
 carsData.map((carData) => {
   return Cars.create(carData);
@@ -124,3 +127,5 @@ carsData.map((carData) => {
 customersData.map((customerData) => {
   return Customers.create(customerData);
 });
+
+mongoose.disconnect();

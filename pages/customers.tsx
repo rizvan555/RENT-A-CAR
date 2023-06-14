@@ -1,7 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
-import clientImg1 from "../resource/images/clientImg1.png";
-import clientImg2 from "../resource/images/clientImg2.png";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { BsArrowRightSquare, BsArrowLeftSquare } from "react-icons/bs";
 import axios from "axios";
@@ -27,45 +25,19 @@ function Customers() {
     autoPlay: true,
   };
 
-  // const customers = [
-  //   {
-  //     id: 1,
-  //     photo: clientImg1,
-  //     name: "Hannery",
-  //     text: "It is a long established fact that a reader will be distracted by the readable content of a page",
-  //   },
-  //   {
-  //     id: 2,
-  //     photo: clientImg2,
-  //     name: "Channery",
-  //     text: "It is a long established fact that a reader will be distracted by the readable content of a page",
-  //   },
-  // ];
-  // const customers1 = [
-  //   {
-  //     id: 1,
-  //     photo: clientImg2,
-  //     name: "Cheng",
-  //     text: "It is a long established fact that a reader will be distracted by the readable content of a page",
-  //   },
-  //   {
-  //     id: 2,
-  //     photo: clientImg1,
-  //     name: "Jang",
-  //     text: "It is a long established fact that a reader will be distracted by the readable content of a page",
-  //   },
-  // ];
-
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get<Customers[]>(
-        "http://localhost:3001/cars/customers"
-      );
-      setMyCustomers(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  useEffect(() => {
+    const handleSearch = async () => {
+      try {
+        const response = await axios.get<Customers[]>(
+          "http://localhost:3001/customers"
+        );
+        setMyCustomers(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    handleSearch();
+  }, []);
 
   return (
     <div className="relative p-10">
@@ -73,61 +45,34 @@ function Customers() {
         WHAT SAYS CUSTOMERS
       </h1>
       <Slider {...settings}>
-        {slide ? (
-          <div className="">
-            <div className="md:flex xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24 ">
-              {myCustomers.map((customer, index) => {
-                return (
-                  <div
-                    className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
-                    key={index}
-                  >
-                    <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
-                      <Image
-                        src={customer.customer.img}
-                        alt="customer-photo"
-                        className="absolute md:-top-12 -top-10 right-24"
-                      />
-                    </div>
-                    <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
-                      {customer.customer.name}
-                    </h3>
-                    <p className="md:text-xl text-[12px] font-light">
-                      {customer.customer.text}
-                    </p>
+        <div className="">
+          <div className="md:flex xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24 ">
+            {myCustomers.map((myCustomer, index) => {
+              return (
+                <div
+                  className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
+                  key={index}
+                >
+                  <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
+                    <Image
+                      src={myCustomer.customer.img}
+                      alt="customer-photo"
+                      className="absolute md:-top-12 -top-10 right-24"
+                      width={170}
+                      height={170}
+                    />
                   </div>
-                );
-              })}
-            </div>
+                  <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
+                    {myCustomer.customer.name}
+                  </h3>
+                  <p className="md:text-xl text-[12px] font-light">
+                    {myCustomer.customer.text}
+                  </p>
+                </div>
+              );
+            })}
           </div>
-        ) : (
-          <div className="">
-            <div className="md:flex xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24">
-              {myCustomers.map((customer, index) => {
-                return (
-                  <div
-                    className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
-                    key={index}
-                  >
-                    <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
-                      <Image
-                        src={customer.customer.img}
-                        alt="customer-photo"
-                        className="absolute md:-top-12 -top-10 right-24"
-                      />
-                    </div>
-                    <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
-                      {customer.customer.name}
-                    </h3>
-                    <p className="md:text-xl text-[12px] font-light">
-                      {customer.customer.text}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+        </div>
       </Slider>
       <button
         className="md:visible invisible absolute left-44 bottom-72 cursor-pointer active:scale-90 transition-all"
