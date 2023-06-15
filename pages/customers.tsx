@@ -16,6 +16,9 @@ function Customers() {
   const [slide, setSlide] = useState(true);
   const [myCustomers, setMyCustomers] = useState<Customers[]>([]);
 
+  const firstTwoCustomers = myCustomers.slice(0, 2);
+  const remainingCustomers = myCustomers.slice(2);
+
   const settings = {
     arrow: true,
     infinite: true,
@@ -44,35 +47,67 @@ function Customers() {
       <h1 className="md:text-5xl text-2xl font-bold text-center py-10">
         WHAT SAYS CUSTOMERS
       </h1>
+
       <Slider {...settings}>
-        <div className="">
-          <div className="md:flex xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24 ">
-            {myCustomers.map((myCustomer, index) => {
-              return (
-                <div
-                  className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
-                  key={index}
-                >
-                  <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
-                    <Image
-                      src={myCustomer.customer.img}
-                      alt="customer-photo"
-                      className="absolute md:-top-12 -top-10 right-24"
-                      width={170}
-                      height={170}
-                    />
+        {slide ? (
+          <div className="">
+            <div className="md:flex flex-shrink-0 xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24 ">
+              {firstTwoCustomers.map((myCustomer, index) => {
+                return (
+                  <div
+                    className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
+                    key={index}
+                  >
+                    <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
+                      <Image
+                        src={myCustomer.customer.img}
+                        alt="customer-photo"
+                        className="absolute md:-top-12 -top-10 right-24"
+                        width={170}
+                        height={170}
+                      />
+                    </div>
+                    <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
+                      {myCustomer.customer.name}
+                    </h3>
+                    <p className="md:text-xl text-[12px] font-light">
+                      {myCustomer.customer.text}
+                    </p>
                   </div>
-                  <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
-                    {myCustomer.customer.name}
-                  </h3>
-                  <p className="md:text-xl text-[12px] font-light">
-                    {myCustomer.customer.text}
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="">
+            <div className="md:flex xs:flex-col justify-center items-center gap-10 md:px-10 pl-10 py-24 ">
+              {remainingCustomers.map((myCustomer, index) => {
+                return (
+                  <div
+                    className="customer relative flex flex-col justify-center items-center border px-4 md:pt-2 md:pb-6 py-8 md:w-[25vw] w-[70vw] text-center md:gap-4 gap-8 md:mb-0 mb-20 hover:scale-105 transition-all"
+                    key={index}
+                  >
+                    <div className="md:w-[170px] w-[80px] md:h-[170px] h-[80px]">
+                      <Image
+                        src={myCustomer.customer.img}
+                        alt="customer-photo"
+                        className="absolute md:-top-12 -top-10 right-24"
+                        width={170}
+                        height={170}
+                      />
+                    </div>
+                    <h3 className="md:text-2xl text-xl font-bold md:-mt-6 -mt-2">
+                      {myCustomer.customer.name}
+                    </h3>
+                    <p className="md:text-xl text-[12px] font-light">
+                      {myCustomer.customer.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </Slider>
       <button
         className="md:visible invisible absolute left-44 bottom-72 cursor-pointer active:scale-90 transition-all"
