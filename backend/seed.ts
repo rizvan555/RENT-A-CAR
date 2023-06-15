@@ -13,7 +13,6 @@ const carSchema = new Schema(
   },
   { versionKey: false }
 );
-
 const customerSchema = new Schema({
   customer: new Schema(
     {
@@ -21,6 +20,19 @@ const customerSchema = new Schema({
       name: String,
       email: String,
       text: String,
+    },
+    { _id: false }
+  ),
+});
+const catalogSchema = new Schema({
+  catalog: new Schema(
+    {
+      model: String,
+      brand: String,
+      type: String,
+      img: String,
+      price: String,
+      info: String,
     },
     { _id: false }
   ),
@@ -82,7 +94,6 @@ const carsData = [
     },
   },
 ];
-
 const customersData = [
   {
     customer: {
@@ -117,15 +128,81 @@ const customersData = [
     },
   },
 ];
+const catalogsData = [
+  {
+    catalog: {
+      model: "Mercedes-GL",
+      brand: "GL classe",
+      type: "SUV",
+      img: "/images/img1.png",
+      price: "Start per day €450",
+      info: "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet",
+    },
+  },
+  {
+    catalog: {
+      model: "Mercedes-S",
+      brand: "S classe",
+      type: "SUV",
+      img: "/images/img2.png",
+      price: "Start per day €400",
+      info: "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet",
+    },
+  },
+  {
+    catalog: {
+      model: "Mercedes-ML",
+      brand: "ML classe",
+      type: "Crassover",
+      img: "/images/img1.png",
+      price: "Start per day €350",
+      info: "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet",
+    },
+  },
+  {
+    catalog: {
+      model: "Mercedes-ML",
+      brand: "ML classe",
+      type: "Crassover",
+      img: "/images/img1.png",
+      price: "Start per day €350",
+      info: "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet",
+    },
+  },
+  {
+    catalog: {
+      model: "Mercedes-S",
+      brand: "S classe",
+      type: "SUV",
+      img: "/images/img2.png",
+      price: "Start per day €400",
+      info: "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet",
+    },
+  },
+  {
+    catalog: {
+      model: "Mercedes-GL",
+      brand: "GL classe",
+      type: "SUV",
+      img: "/images/img1.png",
+      price: "Start per day €450",
+      info: "Lorem ipsum dolor sit amet, consectetur adip lorem ipsum dolor sit amet",
+    },
+  },
+];
 
 export const Cars = model("Cars", carSchema);
 export const Customers = model("Customers", customerSchema);
+export const CatalogItems = model("CatalogItems", catalogSchema);
 
 carsData.map((carData) => {
   return Cars.create(carData);
 });
 customersData.map((customerData) => {
   return Customers.create(customerData);
+});
+catalogsData.map((catalogData) => {
+  return CatalogItems.create(catalogData);
 });
 
 mongoose.disconnect();

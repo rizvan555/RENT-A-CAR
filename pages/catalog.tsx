@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "./components/resource/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Car {
   car: {
@@ -14,6 +15,7 @@ interface Car {
 
 function Catalog() {
   const [carCatalog, setCarCatalog] = useState<Car[]>([]);
+  const [selectCar, setSelectCar] = useState<Car | null>(null);
 
   useEffect(() => {
     const getCarCatalog = async () => {
@@ -27,6 +29,13 @@ function Catalog() {
     };
     getCarCatalog();
   }, []);
+
+  const catalogFiltered = () => {
+    const filteredMyCar = carCatalog.filter(
+      (catalog) => catalog._id === selectCar?._id
+    );
+    console.log(filteredMyCar);
+  };
 
   return (
     <div className="md:p-6 p-10">
@@ -54,9 +63,14 @@ function Catalog() {
               <p className="md:text-xl text-[10px] text-primary font-bold ">
                 {catalog.car.price}
               </p>
-              <div className=" text-slate-100 mt-5">
-                <Button className="bg-primary">Book Now</Button>
-              </div>
+              <li className=" text-slate-100 mt-5">
+                <button
+                  className="bg-primary"
+                  onClick={() => catalogFiltered()}
+                >
+                  Book Now
+                </button>
+              </li>
             </li>
           );
         })}
