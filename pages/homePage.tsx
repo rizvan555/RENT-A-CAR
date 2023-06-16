@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "./components/layout/Header";
 import bannerBg from "../resource/images/bannerBg.png";
 import Image from "next/image";
 import Carousel from "./components/resource/Carousel";

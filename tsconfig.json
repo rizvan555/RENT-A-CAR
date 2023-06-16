@@ -28,8 +28,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "backend/server.ts",
-    "backend/seed.ts"
+    "pages/backend/server.ts",
+    "pages/backend/seed.ts"
   ],
   "exclude": ["node_modules"]
 }
