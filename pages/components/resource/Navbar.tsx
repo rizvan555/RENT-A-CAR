@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
 function Navbar() {
   const [navMenu, setNavMenu] = useState([
@@ -11,8 +12,8 @@ function Navbar() {
     { id: 6, name: "Contact", path: "/contact" },
   ]);
   return (
-    <nav className="">
-      <ul className="flex md:gap-12 gap-10">
+    <nav className="flex ">
+      <ul className="flex items-center md:gap-12 gap-10">
         {navMenu.map((nav) => {
           return (
             <li key={nav.id}>
@@ -24,6 +25,10 @@ function Navbar() {
             </li>
           );
         })}
+        <div className="flex gap-2 rounded items-center border py-2 px-3 bg-zinc-900  active:scale-95 transition-all cursor-pointer">
+          <UserButton afterSignOutUrl="/" />
+          <h4 className="text-[14px]">Sign Out</h4>
+        </div>
       </ul>
     </nav>
   );
