@@ -191,12 +191,12 @@ const catalogsData = [
   },
 ];
 
-export const Cars = model("Cars", carSchema);
+export const Car = model("Car", carSchema);
 export const Customers = model("Customers", customerSchema);
 export const CatalogItems = model("CatalogItems", catalogSchema);
 
 carsData.map((carData) => {
-  return Cars.create(carData);
+  return Car.create(carData);
 });
 customersData.map((customerData) => {
   return Customers.create(customerData);

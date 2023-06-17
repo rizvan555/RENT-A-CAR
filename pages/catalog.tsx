@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Button from "./components/resource/Button";
 import Image from "next/image";
-import Link from "next/link";
 
 interface Car {
   car: {
@@ -15,13 +13,12 @@ interface Car {
 
 function Catalog() {
   const [carCatalog, setCarCatalog] = useState<Car[]>([]);
-  const [selectCar, setSelectCar] = useState<Car | null>(null);
+  const [selectedCar, setSelectedCar] = useState<Car | null>(null);
 
   useEffect(() => {
     const getCarCatalog = async () => {
       try {
         const response = await axios.get("http://localhost:3001/cars/car");
-        console.log(response.data);
         setCarCatalog(response.data);
       } catch (error) {
         console.log(error);
@@ -30,11 +27,12 @@ function Catalog() {
     getCarCatalog();
   }, []);
 
-  const catalogFiltered = () => {
+  const catalogFiltered = (selectedCar: Car) => {
     const filteredMyCar = carCatalog.filter(
-      (catalog) => catalog._id === selectCar?._id
+      (catalog) => catalog._id === selectedCar._id
     );
     console.log(filteredMyCar);
+    setCarCatalog(filteredMyCar);
   };
 
   return (
@@ -65,8 +63,8 @@ function Catalog() {
               </p>
               <li className=" text-slate-100 mt-5">
                 <button
-                  className="bg-primary"
-                  onClick={() => catalogFiltered()}
+                  className="bg-primary px-6 py-2"
+                  onClick={() => catalogFiltered(catalog)}
                 >
                   Book Now
                 </button>
